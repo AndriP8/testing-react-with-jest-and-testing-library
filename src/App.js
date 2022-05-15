@@ -1,14 +1,14 @@
-import "./App.css";
-import Option from "./pages/entry/Option";
-import SummaryForm from "./pages/summary/SummaryForm";
+import { Container } from "react-bootstrap";
+import OrderEntry from "./pages/entry/OrderEntry";
+import { OrderDetailsProvider } from "./contexts/OrderDetail";
 
 function App() {
   return (
-    <div className="App">
-      <SummaryForm />
-      <Option optionType={"scoops"} />
-      <Option optionType={"toppings"} />
-    </div>
+    <Container>
+      <OrderDetailsProvider>
+        <OrderEntry />
+      </OrderDetailsProvider>
+    </Container>
   );
 }
 
