@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Form } from "react-bootstrap";
 
-const ToppingOption = ({ name, imagePath }) => {
+const ToppingOption = ({ name, imagePath, updateItemCount }) => {
   return (
     <Col xs={6} sm={4} md={3} lg={2} style={{ textAlign: "center" }}>
       <img
@@ -9,7 +9,7 @@ const ToppingOption = ({ name, imagePath }) => {
         src={`http://localhost:3030/${imagePath}`}
         alt={`${name} topping`}
       />
-      {/* <Form.Group controlId={`${name}-topping-checkbox`}>
+      <Form.Group controlId={`${name}-topping-checkbox`}>
         <Form.Check
           type="checkbox"
           onChange={(e) => {
@@ -17,7 +17,7 @@ const ToppingOption = ({ name, imagePath }) => {
           }}
           label={name}
         />
-      </Form.Group> */}
+      </Form.Group>
     </Col>
   );
 };
