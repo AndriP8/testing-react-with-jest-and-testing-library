@@ -1,8 +1,14 @@
 import React from "react";
 import { Form, Button, Popover, OverlayTrigger } from "react-bootstrap";
 
-const SummaryForm = () => {
+const SummaryForm = ({setOrderPhase}) => {
   const [tcChecked, setTcChecked] = React.useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    setOrderPhase("completed")
+  }
 
   const popover = (
     <Popover id="popover-basic">
@@ -20,7 +26,7 @@ const SummaryForm = () => {
   );
 
   return (
-    <Form>
+    <Form onSubmit={handleSubmit}>
       <Form.Group controlId="terms-and-conditions">
         <Form.Check
           type="checkbox"
